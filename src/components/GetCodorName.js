@@ -19,12 +19,14 @@ const GetcoderByName1 = () => {
             <label>CoderName</label>
 <input type = "text" name = "cname" className = "form-control" value ={cname}
                   onChange = {(e) => setCname(e.target.value)}></input>
-                <p>{coder.cid}</p><br></br> 
-                <p>{coder.cname}</p><br></br>
-                <p>{coder.tech}</p><br></br>      
+                <p>{coder.cid}<br />
+                {coder.cname}<br></br>
+                {coder.tech}<br></br>
+                {coder.laptop.lname}<br></br>
+                {coder.laptop.company}</p>      
             </>
 
-      );      }
+      );  }
    
 
    export default GetcoderByName1;
