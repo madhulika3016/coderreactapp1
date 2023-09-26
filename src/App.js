@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
+import FooterComponent from './components/FooterComponent';
+import HeaderComponent from './components/HeaderComponent';
+import ListCoderComponent from './components/ListCoderComponent';
+import CoderComponent from './components/CoderComponent';
+import GetcoderByName1 from './components/GetCodorName';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <HeaderComponent />
+        <div className= "container">
+          <Routes>
+              <Route path = "/" element = { <ListCoderComponent /> }></Route>
+              <Route path = "/coders" element = { <ListCoderComponent /> }></Route>
+              <Route path = "/add-coder" element = { <CoderComponent />} ></Route>
+              <Route path = "/edit-coder/:id" element = { <CoderComponent />}></Route>
+               <Route path = "/getcoderbyname" element = { <GetcoderByName1 />}></Route>
+            </Routes>
+        </div>
+        <FooterComponent />
+        </BrowserRouter>
+      
     </div>
   );
 }
