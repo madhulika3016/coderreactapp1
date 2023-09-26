@@ -4,7 +4,7 @@ const HeaderComponent = () => {
     return (
         <div>
             <header>
-                <nav className = "navbar navbar-expand-md navbar-success bg-primary">
+                <nav className = "navbar navbar-expand-md navbar-dark bg-primary">
                     <div>
                         <h1 className = "navbar-brand">
                             Coder Management Application

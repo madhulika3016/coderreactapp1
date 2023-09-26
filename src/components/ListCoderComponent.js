@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
-import {listcoders, deletecoder} from '../services/CoderService'
+import {listcoders, deletecoder,getcoderByName} from '../services/CoderService'
 
 const ListEmployeeComponent = () => {
 
@@ -30,6 +30,10 @@ const ListEmployeeComponent = () => {
        })
         
     }
+    function getcoderByName1()
+    {
+        navigate('/getcoderbyname')
+    }
 
     function addCoder() {
         navigate('/add-coder')
@@ -43,8 +47,10 @@ const ListEmployeeComponent = () => {
         <div className = "container">
             <br /><br />
             <h4 className = "text-center"> List Employees </h4>
-            {/* <Link to = "/add-employee" className = "btn btn-primary mb-2" > Add Employee </Link> */}
-            <button className = "btn btn-success mb-4" onClick={addCoder}>Add Coder</button>
+            
+            <button className = "btn btn-success mb-4" onClick={addCoder}>Add Coder</button><br></br>
+            
+ <button className = "btn btn-success mb-4" onClick={getcoderByName1}>CoderNames</button>
             <table className="table table-bordered table-striped">
                 {/* <thead className="table-dark"> */}
                 <thead>   

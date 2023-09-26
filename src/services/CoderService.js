@@ -21,3 +21,7 @@ export const updatecoder = (coder) => {
 export const deletecoder = (cid) => {
     return axios.delete('http://localhost:8080/api/deletecoderbyId/' + cid);
 }
+
+export const getcoderByName = (cname) => {
+    return axios.get('http://localhost:8080/api/getcoderbyname/' + cname);
+}
