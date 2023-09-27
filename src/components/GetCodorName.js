@@ -1,7 +1,7 @@
 import { getcoderByName } from "../services/CoderService";
 import { useState ,useEffect } from "react";
 const GetcoderByName1 = () => {
-      const[coder1,setCoder1]=useState({});
+      const[coder,setCoder]=useState({});
     const[cname,setCname]=useState('');
    
      useEffect(() => {
@@ -10,7 +10,7 @@ const GetcoderByName1 = () => {
  
     const getcodername=(cname)=>{
       getcoderByName(cname).then((response) =>{
-          setCoder1(response.data);
+          setCoder(response.data);
           console.log(response.data);    
       }).catch(error =>{
           console.log(error);
@@ -20,9 +20,13 @@ const GetcoderByName1 = () => {
             <label>CoderName</label>
 <input type = "text" name = "cname" className = "form-control" value ={cname}
                   onChange = {(e) => setCname(e.target.value)}></input>
-                <p>{coder1.cid}<br />
-                {coder1.cname}<br></br>
-                {coder1.tech}<br></br></p>
+                  <table>
+                <td> {coder.cid} </td>
+            <td> {coder.cname} </td>
+             <td>{coder.tech}</td>
+             <td>{coder.laptop.lname}</td>
+             <td>{coder.laptop.company}</td>
+            </table>
             </>
 
       );  }
