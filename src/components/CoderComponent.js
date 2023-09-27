@@ -20,6 +20,7 @@ const coder = {cid, cname, tech,laptop:{lname,company}}
         console.log(coder);
         if(id){
             updatecoder(coder).then((response) => {
+                console.log(response.data)
                 navigate('/coders')
             }).catch(error => {
                 console.log(error)
