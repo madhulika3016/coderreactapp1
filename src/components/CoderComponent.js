@@ -7,14 +7,15 @@ const CoderComponent = () => {
     const [cid, setCid] = useState('')
     const [cname, setCname] = useState('')
     const [tech, setTech] = useState('')
-
+    const[lname,setLname] =useState('')
+    const[company,setCompany]=useState('')
     const navigate = useNavigate();
     const {id} = useParams();
 
     const saveOrUpdateCoder = (e) => {
         e.preventDefault();
 
-        const coder = {cid, cname, tech}
+const coder = {cid, cname, tech,laptop:{lname,company}}
 
         console.log(coder);
         if(id){
@@ -34,17 +35,18 @@ const CoderComponent = () => {
             }).catch(error => {
                 console.log(error)
             })
-        }
+         }
         
     }
 
     useEffect(() => {
-
-        if(id){
+          if(id){
             getcoderById(id).then((response) =>{
                 setCid(response.data.cid)
                 setCname(response.data.cname)
                 setTech(response.data.tech)
+                setLname(response.data.lname)
+                setCompany(response.data.company)
             }).catch(error => {
                 console.log(error)
             })
@@ -60,7 +62,6 @@ const CoderComponent = () => {
             return <h2 className = "text-center">Add Coder</h2>
         }
     }
-
     return (
         <div>
            <br /><br />
@@ -85,6 +86,22 @@ const CoderComponent = () => {
                                         className = "form-control"
                                         value = {tech}
                                         onChange = {(e) => setTech(e.target.value)}>
+                                    </input>
+                                </div>
+                                <div className = "form-group mb-2">
+                                    <label className = "form-label"> LaptopName :</label>
+                                    <input type = "text" name = "lname"
+                                        className = "form-control"
+                                        value = {lname}
+                                        onChange = {(e) => setLname(e.target.value)}>
+                                    </input>
+                                </div>
+                                <div className = "form-group mb-2">
+                                    <label className = "form-label"> LaptopCompany :</label>
+                                    <input type = "text" name = "company"
+                                        className = "form-control"
+                                        value = {company}
+                                        onChange = {(e) => setCompany(e.target.value)}>
                                     </input>
                                 </div>
 

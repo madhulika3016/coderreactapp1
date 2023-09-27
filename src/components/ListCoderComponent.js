@@ -58,6 +58,8 @@ const ListEmployeeComponent = () => {
                         <th> Coder Id </th>
                         <th> Coder Name </th>
                         <th>  Technology </th>
+                        <th>  LaptopName </th>
+                        <th>  Company </th>
                         <th> Actions </th>
                     </tr>
                 </thead>
@@ -69,6 +71,8 @@ const ListEmployeeComponent = () => {
                                 <td> {coder.cid} </td>
                                 <td> {coder.cname} </td>
                                 <td>{coder.tech}</td>
+                                <td>{coder.laptop.lname}</td>
+                                <td>{coder.laptop.company}</td>
                                 <td>
                                     <button className="btn btn-info" onClick={() => updateCoder(coder.cid)} >Update</button>
                                     <button className = "btn btn-danger" onClick = {() => removeCoder(coder.cid)}
