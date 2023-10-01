@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import {listcoders, deletecoder,getcoderByName} from '../services/CoderService'
 
-const ListEmployeeComponent = () => {
+const ListCoderComponent = () => {
 
     const [coders, setCoders] = useState([])
 
@@ -87,4 +87,4 @@ const ListEmployeeComponent = () => {
     )
 }
 
-export default ListEmployeeComponent
+export default ListCoderComponent
