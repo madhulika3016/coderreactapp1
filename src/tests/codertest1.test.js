@@ -21,7 +21,6 @@ describe('createcoder', () => {
   it('posts data successfully to an API', async () => {
     const data = { response: 'data' };
     axios.post.mockResolvedValue(data);
-
     await expect(createcoder(data)).resolves.toEqual(data);
   });
 
@@ -36,7 +35,6 @@ describe('updatecoder', () => {
   it('puts data successfully to an API', async () => {
     const data = { response: 'data' };
     axios.put.mockResolvedValue(data);
-
     await expect(updatecoder(data)).resolves.toEqual(data);
   });
 

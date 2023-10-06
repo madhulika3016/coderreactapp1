@@ -22,8 +22,7 @@ function App() {
             </Routes>
         </div>
         <FooterComponent />
-        </BrowserRouter>
-      
+        </BrowserRouter>     
     </div>
   );
 }
