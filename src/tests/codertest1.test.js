@@ -54,7 +54,7 @@ describe('deleteData', () => {
     await expect(deletecoder()).resolves.toEqual(data);
   });
 
-  it('deletes data erroneously from an API', async () => {
+  it('deletes data erroneously from an API',  async() => {
     const errorMessage = 'Request failed with status code 500';
     axios.delete.mockRejectedValue(new Error(errorMessage));
 

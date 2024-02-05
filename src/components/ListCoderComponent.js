@@ -46,7 +46,7 @@ const ListCoderComponent = () => {
     return (
         <div className = "container">
             <br /><br />
-            <h4 className = "text-center"> List Employees </h4>
+            <h4 className = "text-center"> List Coders </h4>
             
             <button className = "btn btn-success mb-4" onClick={addCoder}>Add Coder</button><br></br>
             
